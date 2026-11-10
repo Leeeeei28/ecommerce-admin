@@ -1,0 +1,157 @@
+
+.header {
+  background: #FFFFFF;
+  padding: 18px 30px;
+  border-bottom: 1px solid #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header-left {
+  min-width: 0;
+}
+
+.header-left h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.header-left p {
+  color: #64748B;
+  font-size: 12px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F1F5F9;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: #64748B;
+}
+
+.header-search input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 180px;
+  font-size: 12px;
+}
+
+.notification-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  color: #475569;
+  display: flex;
+  align-items: center;
+}
+
+.notification-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  width: 8px;
+  height: 8px;
+  background: #EF4444;
+  border-radius: 50%;
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-info h4 {
+  font-size: 12px;
+}
+
+.admin-info span {
+  font-size: 10px;
+  color: #64748B;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .header {
+    padding: 18px 22px;
+  }
+
+  .header-right {
+    gap: 15px;
+  }
+
+  .header-search input {
+    width: 130px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header {
+    padding: 16px 18px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header-left h2 {
+    font-size: 18px;
+  }
+
+  .header-right {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .header-search {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+  }
+
+  .header-search input {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .admin-profile {
+    gap: 7px;
+  }
+
+  .admin-info {
+    display: none;
+  }
+
+  .admin-profile > svg:last-child {
+    display: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 380px) {
+  .header {
+    padding: 14px;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .header-search input {
+    font-size: 11px;
+  }
+}
