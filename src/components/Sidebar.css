@@ -1,4 +1,3 @@
-
 .sidebar {
   width: 260px;
   min-width: 260px;
@@ -39,6 +38,7 @@
 }
 
 .menu-item {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -49,6 +49,9 @@
   cursor: pointer;
   transition: 0.2s;
   white-space: nowrap;
+  border: none;
+  background: transparent;
+  text-align: left;
 }
 
 .menu-item:hover {
@@ -57,6 +60,79 @@
 }
 
 .menu-item.active {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+.sidebar-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar-parent-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  background: transparent;
+  color: inherit;
+  border: none;
+  font-size: inherit;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.sidebar-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.sidebar-arrow svg {
+  transition: transform 0.2s ease;
+}
+
+.sidebar-arrow .arrow-open {
+  transform: rotate(180deg);
+}
+
+.sidebar-submenu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-left: 20px;
+}
+
+.submenu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #CBD5E1;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+  white-space: nowrap;
+}
+
+.submenu-item:hover {
+  background: #263B70;
+  color: #FFFFFF;
+}
+
+.submenu-item.active {
   background: #2563EB;
   color: #FFFFFF;
 }
@@ -85,6 +161,11 @@
     gap: 10px;
     padding: 12px 10px;
   }
+
+  .submenu-item {
+    font-size: 11px;
+    padding: 10px;
+  }
 }
 
 /* Mobile */
@@ -108,6 +189,7 @@
     gap: 8px;
     overflow-x: auto;
     flex-direction: row;
+    align-items: flex-start;
     padding-bottom: 8px;
   }
 
@@ -117,6 +199,7 @@
 
   .menu-item {
     flex-shrink: 0;
+    width: auto;
     padding: 11px 12px;
     font-size: 11px;
   }
@@ -124,6 +207,30 @@
   .menu-item svg {
     width: 17px;
     height: 17px;
+  }
+
+  .sidebar-group {
+    flex-shrink: 0;
+    width: auto;
+  }
+
+  .sidebar-group > .menu-item {
+    width: auto;
+  }
+
+  .sidebar-parent-button {
+    gap: 8px;
+  }
+
+  .sidebar-submenu {
+    padding-left: 0;
+    padding-top: 5px;
+    min-width: 170px;
+  }
+
+  .submenu-item {
+    font-size: 11px;
+    padding: 10px;
   }
 
   .sidebar-bottom {
