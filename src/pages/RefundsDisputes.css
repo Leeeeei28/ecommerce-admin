@@ -465,3 +465,25 @@
     font-size: 20px;
   }
 }
+
+.refunds-page {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .refunds-page {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .refunds-page {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .refunds-page {
+    padding: 12px;
+  }
+}

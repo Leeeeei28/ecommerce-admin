@@ -298,3 +298,24 @@
     height: 220px;
   }
 }
+.analytics-overview {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .analytics-overview {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .analytics-overview {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .analytics-overview {
+    padding: 12px;
+  }
+}

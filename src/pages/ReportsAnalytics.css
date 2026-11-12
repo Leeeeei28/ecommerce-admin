@@ -326,3 +326,25 @@
     height: 220px;
   }
 }
+
+.reports-analytics {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .reports-analytics {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reports-analytics {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .reports-analytics {
+    padding: 12px;
+  }
+}

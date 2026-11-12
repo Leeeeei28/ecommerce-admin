@@ -475,3 +475,25 @@
     font-size: 20px;
   }
 }
+
+.transactions-page {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .transactions-page {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .transactions-page {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .transactions-page {
+    padding: 12px;
+  }
+}

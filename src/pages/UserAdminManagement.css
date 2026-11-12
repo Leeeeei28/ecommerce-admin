@@ -529,3 +529,25 @@
     font-size: 20px;
   }
 }
+
+.user-admin-management {
+  padding: 30px;
+}
+
+@media (max-width: 1024px) {
+  .user-admin-management {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .user-admin-management {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .user-admin-management {
+    padding: 12px;
+  }
+}
