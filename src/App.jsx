@@ -14,6 +14,7 @@ import KnowledgeBase from "./pages/KnowledgeBase";
 
 import PaymentOverview from "./pages/PaymentOverview";
 import Transactions from "./pages/Transactions";
+import RefundsDisputes from "./pages/RefundsDisputes";
 
 import "./App.css";
 
@@ -50,6 +51,8 @@ function App() {
             <PaymentOverview />
           ) : activePage === "Transactions" ? (
             <Transactions />
+          ) : activePage === "Refunds & Disputes" ? (
+            <RefundsDisputes />
           ) : (
             <div className="dashboard-content">
               <h2>{activePage}</h2>
