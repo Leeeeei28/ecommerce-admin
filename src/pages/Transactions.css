@@ -1,0 +1,361 @@
+
+.transactions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.transactions-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.transactions-heading h2 {
+  font-size: 23px;
+  margin-bottom: 6px;
+}
+
+.transactions-heading p,
+.transactions-table-heading p {
+  color: #64748B;
+  font-size: 13px;
+}
+
+.transaction-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 15px;
+  background: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.transaction-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.transaction-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+}
+
+.transaction-stat-icon {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+}
+
+.transaction-stat-icon.blue {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.transaction-stat-icon.green {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.transaction-stat-icon.orange {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+
+.transaction-stat-icon.red {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.transaction-stat-card p {
+  color: #64748B;
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+.transaction-stat-card h3 {
+  font-size: 21px;
+}
+
+.transactions-table-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.transactions-table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.transactions-table-heading h3 {
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.transactions-table-heading p strong {
+  color: #1E293B;
+}
+
+.transactions-table-heading > span {
+  background: #EFF6FF;
+  color: #2563EB;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.transaction-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.transaction-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 180px;
+  padding: 0 12px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  color: #94A3B8;
+}
+
+.transaction-search input {
+  width: 100%;
+  padding: 11px 0;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  color: #1E293B;
+}
+
+.transaction-filters select {
+  padding: 11px 12px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #475569;
+  font-size: 12px;
+  outline: none;
+}
+
+.transactions-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.transactions-table th {
+  padding: 13px 12px;
+  background: #F8FAFC;
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.transactions-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #F1F5F9;
+  color: #475569;
+  font-size: 12px;
+}
+
+.transactions-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.transaction-id {
+  color: #2563EB !important;
+  font-weight: 600;
+}
+
+.transaction-amount {
+  color: #1E293B !important;
+  font-weight: 600;
+}
+
+.transaction-status {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.transaction-status.completed {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.transaction-status.pending {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.transaction-status.failed {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.transaction-view-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  background: #EFF6FF;
+  color: #2563EB;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+.transaction-empty {
+  text-align: center;
+  padding: 30px !important;
+  color: #94A3B8 !important;
+}
+
+.transaction-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.transaction-modal {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  background: #FFFFFF;
+  border-radius: 12px;
+}
+
+.transaction-modal-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.transaction-modal-heading h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.transaction-modal-heading p {
+  color: #64748B;
+  font-size: 12px;
+}
+
+.transaction-modal-heading button {
+  display: flex;
+  padding: 5px;
+  background: transparent;
+  border: none;
+  color: #64748B;
+}
+
+.transaction-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.transaction-detail-list > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.transaction-detail-list > div > span:first-child {
+  color: #64748B;
+  font-size: 12px;
+}
+
+.transaction-detail-list strong {
+  font-size: 12px;
+  text-align: right;
+  color: #1E293B;
+}
+
+.transaction-close-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px;
+  background: #2563EB;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .transaction-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .transactions-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .transaction-filters {
+    flex-direction: column;
+  }
+
+  .transaction-search {
+    min-height: 42px;
+  }
+
+  .transactions-table-card {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .transaction-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .transactions-heading h2 {
+    font-size: 20px;
+  }
+}

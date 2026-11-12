@@ -12,6 +12,9 @@ import CustomerInquiries from "./pages/CustomerInquiries";
 import SupportAgents from "./pages/SupportAgents";
 import KnowledgeBase from "./pages/KnowledgeBase";
 
+import PaymentOverview from "./pages/PaymentOverview";
+import Transactions from "./pages/Transactions";
+
 import "./App.css";
 
 function App() {
@@ -42,6 +45,11 @@ function App() {
             <SupportAgents />
           ) : activePage === "Knowledge Base" ? (
             <KnowledgeBase />
+          ) : activePage === "Payment & Transactions" ||
+            activePage === "Payment Overview" ? (
+            <PaymentOverview />
+          ) : activePage === "Transactions" ? (
+            <Transactions />
           ) : (
             <div className="dashboard-content">
               <h2>{activePage}</h2>
