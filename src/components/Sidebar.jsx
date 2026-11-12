@@ -19,6 +19,8 @@ import {
   RotateCcw,
   FileBarChart,
   ShieldCheck,
+  Package,
+  MapPin,
 } from "lucide-react";
 
 import "./Sidebar.css";
@@ -44,6 +46,12 @@ function Sidebar({ activePage, onNavigate }) {
     { name: "User & Admin Management", icon: ShieldCheck },
   ];
 
+  const logisticsPages = [
+    { name: "Logistics Overview", icon: LayoutDashboard },
+    { name: "Shipment Tracking", icon: MapPin },
+    { name: "Shipping Records", icon: Package },
+  ];
+
   const [supportOpen, setSupportOpen] = useState(
     supportPages.some((page) => page.name === activePage)
   );
@@ -54,6 +62,10 @@ function Sidebar({ activePage, onNavigate }) {
 
   const [analyticsOpen, setAnalyticsOpen] = useState(
     analyticsPages.some((page) => page.name === activePage)
+  );
+
+  const [logisticsOpen, setLogisticsOpen] = useState(
+    logisticsPages.some((page) => page.name === activePage)
   );
 
   useEffect(() => {
@@ -70,6 +82,13 @@ function Sidebar({ activePage, onNavigate }) {
       analyticsPages.some((page) => page.name === activePage)
     ) {
       setAnalyticsOpen(true);
+    }
+
+    if (
+      activePage === "Logistics & Location" ||
+      logisticsPages.some((page) => page.name === activePage)
+    ) {
+      setLogisticsOpen(true);
     }
   }, [activePage]);
 
@@ -263,22 +282,67 @@ function Sidebar({ activePage, onNavigate }) {
           )}
         </div>
 
-        {mainPages.slice(2).map((item) => {
-          const Icon = item.icon;
-
-          return (
+        {/* Logistics & Location */}
+        <div className="sidebar-group">
+          <div
+            className={`menu-item ${
+              activePage === "Logistics & Location" ||
+              logisticsPages.some((page) => page.name === activePage)
+                ? "active"
+                : ""
+            }`}
+          >
             <button
-              key={item.name}
-              className={`menu-item ${
-                activePage === item.name ? "active" : ""
-              }`}
-              onClick={() => onNavigate(item.name)}
+              className="sidebar-parent-button"
+              onClick={() => onNavigate("Logistics & Location")}
             >
-              <Icon size={20} />
-              <span>{item.name}</span>
+              <Truck size={20} />
+              <span>Logistics & Location</span>
             </button>
-          );
-        })}
+
+            <button
+              className="sidebar-arrow"
+              onClick={() => setLogisticsOpen(!logisticsOpen)}
+              aria-label="Toggle Logistics & Location menu"
+            >
+              <ChevronDown
+                size={17}
+                className={logisticsOpen ? "arrow-open" : ""}
+              />
+            </button>
+          </div>
+
+          {logisticsOpen && (
+            <div className="sidebar-submenu">
+              {logisticsPages.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <button
+                    key={item.name}
+                    className={`submenu-item ${
+                      activePage === item.name ? "active" : ""
+                    }`}
+                    onClick={() => onNavigate(item.name)}
+                  >
+                    <Icon size={17} />
+                    <span>{item.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        <button
+          className={`menu-item ${
+            activePage === "Subscription & Commission" ? "active" : ""
+          }`}
+          onClick={() => onNavigate("Subscription & Commission")}
+        >
+          <Wallet size={20} />
+          <span>Subscription & Commission</span>
+        </button>
       </nav>
 
       <div className="sidebar-bottom">

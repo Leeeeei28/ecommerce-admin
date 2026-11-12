@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  padding: 30px;
+  width: 100%;
 }
 
 .tracking-heading h2 {
@@ -408,5 +410,17 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .shipment-tracking {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .shipment-tracking {
+    padding: 12px;
   }
 }

@@ -21,6 +21,10 @@ import AnalyticsOverview from "./pages/AnalyticsOverview";
 import ReportsAnalytics from "./pages/ReportsAnalytics";
 import UserAdminManagement from "./pages/UserAdminManagement";
 
+import LogisticsOverview from "./pages/LogisticsOverview";
+import ShipmentTracking from "./pages/ShipmentTracking";
+import ShippingRecords from "./pages/ShippingRecords";
+
 import "./App.css";
 
 function App() {
@@ -65,6 +69,13 @@ function App() {
             <ReportsAnalytics />
           ) : activePage === "User & Admin Management" ? (
             <UserAdminManagement />
+          ) : activePage === "Logistics & Location" ||
+            activePage === "Logistics Overview" ? (
+            <LogisticsOverview />
+          ) : activePage === "Shipment Tracking" ? (
+            <ShipmentTracking />
+          ) : activePage === "Shipping Records" ? (
+            <ShippingRecords />
           ) : (
             <div className="dashboard-content">
               <h2>{activePage}</h2>

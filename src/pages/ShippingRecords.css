@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 30px;
+  width: 100%;
 }
 
 .shipping-records-heading h2 {
@@ -375,4 +377,15 @@
     text-align: left;
   }
 }
-    
+
+@media (max-width: 600px) {
+  .shipping-records {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 380px) {
+  .shipping-records {
+    padding: 12px;
+  }
+}
