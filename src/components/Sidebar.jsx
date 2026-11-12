@@ -17,6 +17,8 @@ import {
   ChevronDown,
   Receipt,
   RotateCcw,
+  FileBarChart,
+  ShieldCheck,
 } from "lucide-react";
 
 import "./Sidebar.css";
@@ -36,12 +38,22 @@ function Sidebar({ activePage, onNavigate }) {
     { name: "Refunds & Disputes", icon: RotateCcw },
   ];
 
+  const analyticsPages = [
+    { name: "Analytics Overview", icon: LayoutDashboard },
+    { name: "Reports & Analytics", icon: FileBarChart },
+    { name: "User & Admin Management", icon: ShieldCheck },
+  ];
+
   const [supportOpen, setSupportOpen] = useState(
     supportPages.some((page) => page.name === activePage)
   );
 
   const [paymentOpen, setPaymentOpen] = useState(
     paymentPages.some((page) => page.name === activePage)
+  );
+
+  const [analyticsOpen, setAnalyticsOpen] = useState(
+    analyticsPages.some((page) => page.name === activePage)
   );
 
   useEffect(() => {
@@ -51,6 +63,13 @@ function Sidebar({ activePage, onNavigate }) {
 
     if (paymentPages.some((page) => page.name === activePage)) {
       setPaymentOpen(true);
+    }
+
+    if (
+      activePage === "Analytics & Admin" ||
+      analyticsPages.some((page) => page.name === activePage)
+    ) {
+      setAnalyticsOpen(true);
     }
   }, [activePage]);
 
@@ -192,7 +211,59 @@ function Sidebar({ activePage, onNavigate }) {
           )}
         </div>
 
-        {mainPages.slice(1).map((item) => {
+        {/* Analytics & Admin */}
+        <div className="sidebar-group">
+          <div
+            className={`menu-item ${
+              activePage === "Analytics & Admin" ||
+              analyticsPages.some((page) => page.name === activePage)
+                ? "active"
+                : ""
+            }`}
+          >
+            <button
+              className="sidebar-parent-button"
+              onClick={() => onNavigate("Analytics & Admin")}
+            >
+              <ChartNoAxesCombined size={20} />
+              <span>Analytics & Admin</span>
+            </button>
+
+            <button
+              className="sidebar-arrow"
+              onClick={() => setAnalyticsOpen(!analyticsOpen)}
+              aria-label="Toggle Analytics & Admin menu"
+            >
+              <ChevronDown
+                size={17}
+                className={analyticsOpen ? "arrow-open" : ""}
+              />
+            </button>
+          </div>
+
+          {analyticsOpen && (
+            <div className="sidebar-submenu">
+              {analyticsPages.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <button
+                    key={item.name}
+                    className={`submenu-item ${
+                      activePage === item.name ? "active" : ""
+                    }`}
+                    onClick={() => onNavigate(item.name)}
+                  >
+                    <Icon size={17} />
+                    <span>{item.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {mainPages.slice(2).map((item) => {
           const Icon = item.icon;
 
           return (

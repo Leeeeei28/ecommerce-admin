@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 
 import Dashboard from "./pages/Dashboard";
+
 import CustomerSupport from "./pages/CustomerSupport";
 import CustomerTickets from "./pages/CustomerTickets";
 import TicketManagement from "./pages/TicketManagement";
@@ -15,6 +16,10 @@ import KnowledgeBase from "./pages/KnowledgeBase";
 import PaymentOverview from "./pages/PaymentOverview";
 import Transactions from "./pages/Transactions";
 import RefundsDisputes from "./pages/RefundsDisputes";
+
+import AnalyticsOverview from "./pages/AnalyticsOverview";
+import ReportsAnalytics from "./pages/ReportsAnalytics";
+import UserAdminManagement from "./pages/UserAdminManagement";
 
 import "./App.css";
 
@@ -53,6 +58,13 @@ function App() {
             <Transactions />
           ) : activePage === "Refunds & Disputes" ? (
             <RefundsDisputes />
+          ) : activePage === "Analytics & Admin" ||
+            activePage === "Analytics Overview" ? (
+            <AnalyticsOverview />
+          ) : activePage === "Reports & Analytics" ? (
+            <ReportsAnalytics />
+          ) : activePage === "User & Admin Management" ? (
+            <UserAdminManagement />
           ) : (
             <div className="dashboard-content">
               <h2>{activePage}</h2>

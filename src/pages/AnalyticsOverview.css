@@ -209,3 +209,92 @@
     height: 250px;
   }
 }
+
+/* Improved Responsive Layout */
+
+.analytics-overview {
+  width: 100%;
+  min-width: 0;
+}
+
+.analytics-stat-card,
+.analytics-panel {
+  min-width: 0;
+}
+
+.analytics-main-grid {
+  min-width: 0;
+}
+
+.revenue-chart {
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .analytics-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .analytics-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .analytics-overview {
+    gap: 18px;
+  }
+
+  .analytics-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .analytics-date {
+    width: 100%;
+  }
+
+  .analytics-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .analytics-stat-card,
+  .analytics-panel {
+    padding: 15px;
+  }
+
+  .analytics-stat-card h3 {
+    font-size: 20px;
+    overflow-wrap: anywhere;
+  }
+
+  .analytics-stat-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .analytics-panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .revenue-chart {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .analytics-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-page-header h2 {
+    font-size: 20px;
+  }
+
+  .revenue-chart {
+    height: 220px;
+  }
+}

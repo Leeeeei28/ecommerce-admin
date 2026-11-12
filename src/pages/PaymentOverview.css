@@ -346,3 +346,97 @@
     font-size: 20px;
   }
 }
+
+/* Improved Responsive Layout */
+
+.payment-overview {
+  width: 100%;
+  min-width: 0;
+}
+
+.payment-stat-card,
+.payment-status-card,
+.payment-method-card,
+.payment-transactions-card {
+  min-width: 0;
+}
+
+.payment-content-grid {
+  min-width: 0;
+}
+
+.payment-table-wrapper {
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.payment-table {
+  min-width: 650px;
+}
+
+@media (max-width: 900px) {
+  .payment-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .payment-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .payment-overview {
+    gap: 18px;
+  }
+
+  .payment-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .payment-date-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .payment-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .payment-stat-card,
+  .payment-status-card,
+  .payment-method-card,
+  .payment-transactions-card {
+    padding: 15px;
+  }
+
+  .payment-stat-card h3 {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+  }
+
+  .payment-stat-icon,
+  .method-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .payment-section-heading {
+    align-items: flex-start;
+  }
+
+  .payment-table-wrapper {
+    margin: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .payment-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-page-heading h2 {
+    font-size: 19px;
+  }
+}
