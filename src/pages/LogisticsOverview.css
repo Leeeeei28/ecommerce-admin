@@ -1,0 +1,403 @@
+
+.logistics-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logistics-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.logistics-heading h2 {
+  font-size: 24px;
+  color: #1E293B;
+  margin-bottom: 6px;
+}
+
+.logistics-heading p {
+  color: #64748B;
+  font-size: 14px;
+}
+
+.logistics-date-button {
+  padding: 10px 16px;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.logistics-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.logistics-stat-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.logistics-stat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logistics-stat-icon.blue {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.logistics-stat-icon.orange {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+
+.logistics-stat-icon.green {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.logistics-stat-icon.red {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+.logistics-stat-info p {
+  color: #64748B;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.logistics-stat-info h3 {
+  color: #1E293B;
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.logistics-stat-info span {
+  color: #16A34A;
+  font-size: 11px;
+}
+
+.logistics-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.logistics-panel {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 22px;
+  min-width: 0;
+}
+
+.logistics-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.logistics-panel-header h3 {
+  font-size: 16px;
+  color: #1E293B;
+  margin-bottom: 6px;
+}
+
+.logistics-panel-header p {
+  color: #64748B;
+  font-size: 12px;
+}
+
+.delivery-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.delivery-status-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #475569;
+}
+
+.delivery-status-label strong {
+  margin-left: auto;
+  color: #1E293B;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.delivered-dot {
+  background: #16A34A;
+}
+
+.transit-dot {
+  background: #2563EB;
+}
+
+.pending-dot {
+  background: #F59E0B;
+}
+
+.delayed-dot {
+  background: #DC2626;
+}
+
+.delivery-progress {
+  width: 100%;
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.delivered-fill {
+  width: 78.1%;
+  background: #16A34A;
+}
+
+.transit-fill {
+  width: 15.4%;
+  background: #2563EB;
+}
+
+.pending-fill {
+  width: 5.3%;
+  background: #F59E0B;
+}
+
+.delayed-fill {
+  width: 1.2%;
+  background: #DC2626;
+}
+
+.performance-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  min-height: 190px;
+}
+
+.performance-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #16A34A 0% 94.8%,
+    #E2E8F0 94.8% 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.performance-circle::before {
+  content: "";
+  position: absolute;
+  width: 116px;
+  height: 116px;
+  background: #FFFFFF;
+  border-radius: 50%;
+}
+
+.performance-circle > div {
+  position: relative;
+  text-align: center;
+}
+
+.performance-circle h2 {
+  color: #1E293B;
+  font-size: 23px;
+  margin-bottom: 5px;
+}
+
+.performance-circle span {
+  color: #64748B;
+  font-size: 10px;
+}
+
+.performance-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.performance-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.performance-details span {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.performance-details strong {
+  color: #1E293B;
+  font-size: 16px;
+}
+
+.logistics-recent-panel {
+  width: 100%;
+}
+
+.shipment-record-count {
+  color: #64748B;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.logistics-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.logistics-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.logistics-table th {
+  text-align: left;
+  padding: 13px 12px;
+  background: #F8FAFC;
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.logistics-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #F1F5F9;
+  color: #475569;
+  font-size: 12px;
+}
+
+.logistics-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.shipment-id {
+  color: #2563EB !important;
+  font-weight: 600;
+}
+
+.shipment-destination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.shipment-destination svg {
+  color: #94A3B8;
+}
+
+.shipment-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.shipment-status.delivered {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.shipment-status.in-transit {
+  background: #DBEAFE;
+  color: #1D4ED8;
+}
+
+.shipment-status.pending {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.shipment-status.delayed {
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
+@media (max-width: 1100px) {
+  .logistics-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .logistics-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .logistics-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .logistics-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .logistics-stat-card {
+    padding: 18px;
+  }
+
+  .logistics-panel {
+    padding: 16px;
+  }
+
+  .performance-content {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .performance-details {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .logistics-panel-header {
+    align-items: flex-start;
+  }
+}
