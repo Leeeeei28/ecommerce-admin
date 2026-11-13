@@ -1,0 +1,265 @@
+
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.settings-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-heading h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.settings-heading p,
+.settings-section-heading p {
+  color: #64748B;
+  font-size: 14px;
+}
+
+.settings-heading > svg {
+  color: #2563EB;
+}
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.settings-sidebar,
+.settings-content {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+}
+
+.settings-sidebar {
+  padding: 20px 14px;
+}
+
+.settings-sidebar h3 {
+  font-size: 14px;
+  margin: 0 10px 16px;
+  color: #64748B;
+}
+
+.settings-tab {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #475569;
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 5px;
+  transition: 0.2s;
+}
+
+.settings-tab:hover {
+  background: #F1F5F9;
+}
+
+.settings-tab.active {
+  background: #EFF6FF;
+  color: #2563EB;
+  font-weight: 600;
+}
+
+.settings-content {
+  padding: 25px;
+}
+
+.settings-section-heading {
+  padding-bottom: 22px;
+  border-bottom: 1px solid #E2E8F0;
+  margin-bottom: 22px;
+}
+
+.settings-section-heading h3 {
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.settings-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.settings-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settings-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.settings-field input,
+.settings-field select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #CBD5E1;
+  border-radius: 7px;
+  outline: none;
+  background: #FFFFFF;
+  color: #1E293B;
+  font-size: 13px;
+}
+
+.settings-field input:focus,
+.settings-field select:focus {
+  border-color: #2563EB;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.notification-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 18px 0;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.notification-option h4 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.notification-option p {
+  font-size: 12px;
+  color: #64748B;
+}
+
+.toggle-switch {
+  width: 43px;
+  min-width: 43px;
+  height: 23px;
+  padding: 3px;
+  border: none;
+  border-radius: 20px;
+  background: #CBD5E1;
+  transition: 0.2s;
+}
+
+.toggle-switch span {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  transition: 0.2s;
+}
+
+.toggle-switch.enabled {
+  background: #2563EB;
+}
+
+.toggle-switch.enabled span {
+  transform: translateX(20px);
+}
+
+.security-note {
+  margin-top: 20px;
+  padding: 12px;
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.settings-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.settings-save-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #16A34A;
+  font-size: 13px;
+}
+
+.save-settings-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 7px;
+  background: #2563EB;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.save-settings-btn:hover {
+  background: #1D4ED8;
+}
+
+@media (max-width: 900px) {
+  .settings-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-sidebar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .settings-sidebar h3 {
+    width: 100%;
+  }
+
+  .settings-tab {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .settings-heading h2 {
+    font-size: 20px;
+  }
+
+  .settings-content {
+    padding: 18px;
+  }
+
+  .settings-form {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .save-settings-btn {
+    width: 100%;
+  }
+}
