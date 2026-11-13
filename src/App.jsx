@@ -44,7 +44,10 @@ function App() {
       />
 
       <main className="main-content">
-        <Header activePage={activePage} />
+        <Header
+          activePage={activePage}
+          onNavigate={setActivePage}
+        />
 
         <section className="page-content">
           {activePage === "Dashboard" ? (
