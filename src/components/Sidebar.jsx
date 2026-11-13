@@ -406,10 +406,22 @@ function Sidebar({ activePage, onNavigate }) {
         </div>
       </nav>
 
-      <div className="sidebar-bottom">
+      <button
+        className="sidebar-bottom"
+        onClick={() => onNavigate("Settings")}
+        style={{
+          width: "100%",
+          border: "none",
+          background: "transparent",
+          color: "inherit",
+          font: "inherit",
+          textAlign: "left",
+          cursor: "pointer",
+        }}
+      >
         <Settings size={20} />
         <span>Settings</span>
-      </div>
+      </button>
     </aside>
   );
 }

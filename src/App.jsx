@@ -29,6 +29,8 @@ import SubscriptionOverview from "./pages/SubscriptionOverview";
 import CommissionRules from "./pages/CommissionRules";
 import PayoutsSettlements from "./pages/PayoutsSettlements";
 
+import Settings from "./pages/Settings";
+
 import "./App.css";
 
 function App() {
@@ -47,6 +49,8 @@ function App() {
         <section className="page-content">
           {activePage === "Dashboard" ? (
             <Dashboard />
+          ) : activePage === "Settings" ? (
+            <Settings />
           ) : activePage === "Customer Support" ? (
             <CustomerSupport />
           ) : activePage === "Customer Tickets" ? (
