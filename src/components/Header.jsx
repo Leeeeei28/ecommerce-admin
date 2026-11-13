@@ -9,11 +9,13 @@ import {
   Settings,
   User,
   X,
+  Sun,
+  Moon,
 } from "lucide-react";
 
 import "./Header.css";
 
-function Header({ activePage, onNavigate }) {
+function Header({ activePage, onNavigate, isDarkMode, onToggleTheme }) {
   const [search, setSearch] = useState("");
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
@@ -161,6 +163,16 @@ function Header({ activePage, onNavigate }) {
             </div>
           )}
         </div>
+
+        {/* Dark Mode Toggle */}
+        <button
+          className="theme-toggle-btn"
+          onClick={onToggleTheme}
+          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+          title={isDarkMode ? "Light Mode" : "Dark Mode"}
+        >
+          {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
 
         {/* Notifications */}
         <div className="header-dropdown-container">

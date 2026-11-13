@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
@@ -36,6 +36,19 @@ import "./App.css";
 function App() {
   const [activePage, setActivePage] = useState("Dashboard");
 
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    return localStorage.getItem("ecommerce-theme") === "dark";
+  });
+
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", isDarkMode);
+
+    localStorage.setItem(
+      "ecommerce-theme",
+      isDarkMode ? "dark" : "light"
+    );
+  }, [isDarkMode]);
+
   return (
     <div className="app-container">
       <Sidebar
@@ -47,6 +60,8 @@ function App() {
         <Header
           activePage={activePage}
           onNavigate={setActivePage}
+          isDarkMode={isDarkMode}
+          onToggleTheme={() => setIsDarkMode((previous) => !previous)}
         />
 
         <section className="page-content">

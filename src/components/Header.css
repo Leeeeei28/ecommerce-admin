@@ -73,6 +73,46 @@
   padding: 5px;
 }
 
+
+.theme-toggle-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #475569;
+  transition: background 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: #F1F5F9;
+}
+
+body.dark-mode .header {
+  background: var(--bg-secondary);
+  border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .header-left h2,
+body.dark-mode .admin-profile,
+body.dark-mode .theme-toggle-btn,
+body.dark-mode .notification-btn {
+  color: var(--text-primary);
+}
+
+body.dark-mode .header-left p,
+body.dark-mode .admin-info small {
+  color: var(--text-secondary);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background: var(--bg-tertiary);
+}
+
+
 .notification-dot {
   position: absolute;
   top: 0;
