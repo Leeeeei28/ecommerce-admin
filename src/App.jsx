@@ -25,6 +25,10 @@ import LogisticsOverview from "./pages/LogisticsOverview";
 import ShipmentTracking from "./pages/ShipmentTracking";
 import ShippingRecords from "./pages/ShippingRecords";
 
+import SubscriptionOverview from "./pages/SubscriptionOverview";
+import CommissionRules from "./pages/CommissionRules";
+import PayoutsSettlements from "./pages/PayoutsSettlements";
+
 import "./App.css";
 
 function App() {
@@ -76,6 +80,13 @@ function App() {
             <ShipmentTracking />
           ) : activePage === "Shipping Records" ? (
             <ShippingRecords />
+          ) : activePage === "Subscription & Commission" ||
+            activePage === "Subscription Overview" ? (
+            <SubscriptionOverview />
+          ) : activePage === "Commission Rules" ? (
+            <CommissionRules />
+          ) : activePage === "Payouts & Settlements" ? (
+            <PayoutsSettlements />
           ) : (
             <div className="dashboard-content">
               <h2>{activePage}</h2>

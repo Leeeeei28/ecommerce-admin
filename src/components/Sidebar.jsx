@@ -21,6 +21,7 @@ import {
   ShieldCheck,
   Package,
   MapPin,
+  Percent,
 } from "lucide-react";
 
 import "./Sidebar.css";
@@ -52,6 +53,12 @@ function Sidebar({ activePage, onNavigate }) {
     { name: "Shipping Records", icon: Package },
   ];
 
+  const subscriptionPages = [
+    { name: "Subscription Overview", icon: LayoutDashboard },
+    { name: "Commission Rules", icon: Percent },
+    { name: "Payouts & Settlements", icon: Wallet },
+  ];
+
   const [supportOpen, setSupportOpen] = useState(
     supportPages.some((page) => page.name === activePage)
   );
@@ -66,6 +73,11 @@ function Sidebar({ activePage, onNavigate }) {
 
   const [logisticsOpen, setLogisticsOpen] = useState(
     logisticsPages.some((page) => page.name === activePage)
+  );
+
+  const [subscriptionOpen, setSubscriptionOpen] = useState(
+    subscriptionPages.some((page) => page.name === activePage) ||
+      activePage === "Subscription & Commission"
   );
 
   useEffect(() => {
@@ -89,6 +101,13 @@ function Sidebar({ activePage, onNavigate }) {
       logisticsPages.some((page) => page.name === activePage)
     ) {
       setLogisticsOpen(true);
+    }
+
+    if (
+      activePage === "Subscription & Commission" ||
+      subscriptionPages.some((page) => page.name === activePage)
+    ) {
+      setSubscriptionOpen(true);
     }
   }, [activePage]);
 
@@ -334,15 +353,57 @@ function Sidebar({ activePage, onNavigate }) {
           )}
         </div>
 
-        <button
-          className={`menu-item ${
-            activePage === "Subscription & Commission" ? "active" : ""
-          }`}
-          onClick={() => onNavigate("Subscription & Commission")}
-        >
-          <Wallet size={20} />
-          <span>Subscription & Commission</span>
-        </button>
+        {/* Subscription & Commission */}
+        <div className="sidebar-group">
+          <div
+            className={`menu-item ${
+              activePage === "Subscription & Commission" ||
+              subscriptionPages.some((page) => page.name === activePage)
+                ? "active"
+                : ""
+            }`}
+          >
+            <button
+              className="sidebar-parent-button"
+              onClick={() => onNavigate("Subscription Overview")}
+            >
+              <Wallet size={20} />
+              <span>Subscription & Commission</span>
+            </button>
+
+            <button
+              className="sidebar-arrow"
+              onClick={() => setSubscriptionOpen(!subscriptionOpen)}
+              aria-label="Toggle Subscription & Commission menu"
+            >
+              <ChevronDown
+                size={17}
+                className={subscriptionOpen ? "arrow-open" : ""}
+              />
+            </button>
+          </div>
+
+          {subscriptionOpen && (
+            <div className="sidebar-submenu">
+              {subscriptionPages.map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <button
+                    key={item.name}
+                    className={`submenu-item ${
+                      activePage === item.name ? "active" : ""
+                    }`}
+                    onClick={() => onNavigate(item.name)}
+                  >
+                    <Icon size={17} />
+                    <span>{item.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
       </nav>
 
       <div className="sidebar-bottom">
