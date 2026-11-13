@@ -1,4 +1,37 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: light;
+
+  --bg-primary: #F5F7FB;
+  --bg-secondary: #FFFFFF;
+  --bg-tertiary: #F1F5F9;
+
+  --text-primary: #1E293B;
+  --text-secondary: #64748B;
+
+  --border-color: #E2E8F0;
+
+  --primary-color: #2563EB;
+  --sidebar-bg: #172554;
+}
+
+body.dark-mode {
+  color-scheme: dark;
+
+  --bg-primary: #0F172A;
+  --bg-secondary: #1E293B;
+  --bg-tertiary: #334155;
+
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+
+  --border-color: #334155;
+
+  --primary-color: #3B82F6;
+  --sidebar-bg: #0B1738;
+}
 
 * {
   margin: 0;
@@ -8,8 +41,9 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #F5F7FB;
-  color: #1E293B;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 button,
