@@ -1,0 +1,306 @@
+
+.subscription-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 30px;
+  width: 100%;
+}
+
+.subscription-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.subscription-heading h1 {
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.subscription-heading p,
+.subscription-panel-heading p {
+  color: #64748B;
+  font-size: 13px;
+}
+
+.subscription-date-button {
+  padding: 11px 16px;
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  border-radius: 8px;
+  color: #334155;
+  font-size: 13px;
+}
+
+.subscription-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.subscription-stat-card,
+.subscription-panel {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 22px;
+  border: 1px solid #E2E8F0;
+}
+
+.subscription-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.subscription-stat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscription-stat-icon.blue {
+  background: #DBEAFE;
+  color: #2563EB;
+}
+
+.subscription-stat-icon.green {
+  background: #DCFCE7;
+  color: #16A34A;
+}
+
+.subscription-stat-icon.purple {
+  background: #F3E8FF;
+  color: #9333EA;
+}
+
+.subscription-stat-icon.orange {
+  background: #FFEDD5;
+  color: #EA580C;
+}
+
+.subscription-stat-change {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #16A34A;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.subscription-stat-card h2 {
+  font-size: 23px;
+  margin-bottom: 7px;
+}
+
+.subscription-stat-card p {
+  color: #64748B;
+  font-size: 13px;
+}
+
+.subscription-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 20px;
+}
+
+.subscription-panel-heading {
+  margin-bottom: 24px;
+}
+
+.subscription-panel-heading h2 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.subscription-plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.subscription-plan-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 45px;
+  align-items: center;
+  gap: 15px;
+}
+
+.subscription-plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.subscription-plan-info strong {
+  font-size: 13px;
+}
+
+.subscription-plan-info span {
+  color: #64748B;
+  font-size: 11px;
+}
+
+.subscription-progress {
+  height: 9px;
+  background: #E2E8F0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.subscription-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.subscription-progress-fill.basic {
+  background: #2563EB;
+}
+
+.subscription-progress-fill.premium {
+  background: #9333EA;
+}
+
+.subscription-progress-fill.enterprise {
+  background: #F59E0B;
+}
+
+.subscription-plan-percentage {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.subscription-summary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.subscription-summary div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subscription-summary span {
+  color: #64748B;
+  font-size: 12px;
+}
+
+.subscription-summary strong {
+  font-size: 22px;
+}
+
+.subscription-table-panel {
+  min-width: 0;
+}
+
+.subscription-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.subscription-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.subscription-table th,
+.subscription-table td {
+  padding: 15px 12px;
+  text-align: left;
+  border-bottom: 1px solid #E2E8F0;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.subscription-table th {
+  color: #64748B;
+  font-weight: 600;
+  background: #F8FAFC;
+}
+
+.subscription-table td {
+  color: #334155;
+}
+
+.subscription-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.subscription-status.active {
+  background: #DCFCE7;
+  color: #15803D;
+}
+
+.subscription-status.pending {
+  background: #FEF3C7;
+  color: #B45309;
+}
+
+.subscription-status.cancelled {
+  background: #FEE2E2;
+  color: #DC2626;
+}
+
+@media (max-width: 1100px) {
+  .subscription-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .subscription-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .subscription-overview {
+    padding: 18px;
+  }
+
+  .subscription-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .subscription-heading h1 {
+    font-size: 21px;
+  }
+
+  .subscription-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .subscription-stat-card,
+  .subscription-panel {
+    padding: 18px;
+  }
+
+  .subscription-plan-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .subscription-plan-percentage {
+    text-align: left;
+  }
+}
+
+@media (max-width: 380px) {
+  .subscription-overview {
+    padding: 12px;
+  }
+}
